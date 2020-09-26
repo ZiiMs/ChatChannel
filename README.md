@@ -1,5 +1,4 @@
 ## Functionality:
-
 - Either save UUID to mysql or file
 - On player join, auto connect to channels
 - Channel list for the server, add a player to list on join/remove on leave to limit query's.
@@ -11,7 +10,6 @@
     - Color
 
 ## Tasks:
-
 - [ ] Create command
     - [ ] Channel creates and saves to database
 - [ ] Join channel command
