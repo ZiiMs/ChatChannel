@@ -1,0 +1,11 @@
+name: ChatChannel
+version: ${project.version}
+main: me.ziim.chatchannel.ChatChannel
+api-version: 1.16
+authors: [ ZiiM ]
+description: A simple lightweight chat channels mod
+commands:
+  createchannel:
+    description: Create a new channel
+    usage: §eUSAGE /createchannel <channel prefix> <channel color>
+    permission: cc.createchannel
