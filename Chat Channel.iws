@@ -90,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601128448012</updated>
-      <workItem from="1601128449164" duration="7159000" />
+      <workItem from="1601128449164" duration="7521000" />
     </task>
     <servers />
   </component>
@@ -98,10 +98,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="164" key="#Plugins" timestamp="1601135618267">
+    <state x="552" y="164" key="#Plugins" timestamp="1601135727081">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="164" key="#Plugins/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601135618267" />
+    <state x="552" y="164" key="#Plugins/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601135727081" />
     <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1601132625311">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -122,9 +122,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1876" height="271" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601134422444" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1601135437592">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1601135665391">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601135437592" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601135665391" />
   </component>
 </project>
