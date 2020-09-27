@@ -10,8 +10,8 @@
     - Color
 
 ## Tasks:
-- [x] Create command
-    - [X] Channel creates and saves to database
+- [x] `Create command
+    - [X] `Channel creates and saves to database
 - [ ] Join channel command
     - [ ] Adds the player to database, with channel name if channel exists
     - [ ] Receives messages sent in channel
