@@ -1,6 +1,7 @@
 package me.ziim.chatchannel.events;
 
 import me.ziim.chatchannel.ChatChannel;
+import me.ziim.chatchannel.util.ChannelHelper;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,6 +17,7 @@ public class OnJoinEvent implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
         UUID uuid = player.getUniqueId();
-
+        ChannelHelper channelHelper = new ChannelHelper();
+        channelHelper.addPlayer(player, "$");
     }
 }

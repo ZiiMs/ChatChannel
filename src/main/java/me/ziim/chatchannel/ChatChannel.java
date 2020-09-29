@@ -3,21 +3,14 @@ package me.ziim.chatchannel;
 import me.ziim.chatchannel.commands.CreateChannel;
 import me.ziim.chatchannel.commands.JoinChannel;
 import me.ziim.chatchannel.events.ChatListener;
+import me.ziim.chatchannel.util.ChannelHelper;
+import me.ziim.chatchannel.util.DBHelper;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public final class ChatChannel extends JavaPlugin {
-
-    private static Connection connection;
-    private String host = "localhost:3307", db = "spigot", username = "root", password = "root";
-
-    public static Connection getConnection() {
-        return connection;
-    }
 
     @Override
     public void onEnable() {
@@ -26,12 +19,13 @@ public final class ChatChannel extends JavaPlugin {
         this.getCommand("createchannel").setExecutor(new CreateChannel());
         this.getCommand("createchannel").setTabCompleter(new CreateChannel());
         this.getCommand("join").setExecutor(new JoinChannel());
-//        this.getCommand("join").setTabCompleter(new JoinChannel());
+        this.getCommand("join").setTabCompleter(new JoinChannel());
         this.getServer().getPluginManager().registerEvents(new ChatListener(), this);
+
+        DBHelper dbHelper = new DBHelper();
+        ChannelHelper cHelper = new ChannelHelper();
         try {
-            openConnection();
-            Statement statement = connection.createStatement();
-            int id = 0;
+            Statement statement = dbHelper.connect().createStatement();
             String channelSql = "create table if not exists channels( " +
                     "id int auto_increment, " +
                     "prefix varchar (32) not null, " +
@@ -51,36 +45,11 @@ public final class ChatChannel extends JavaPlugin {
                     "unique uuid (UUID)" +
                     ");";
             statement.executeUpdate(playerSql);
-//            statement.executeUpdate(sql);
-//            ResultSet rs = statement.getGeneratedKeys();
-//            if (rs.first()) {
-//                id = (int) rs.getLong(1);
-//            }
-//            System.out.println("id = " + id);
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        }
-
-    }
-
-    public void openConnection() throws SQLException, ClassNotFoundException {
-        if (connection != null && !connection.isClosed()) {
-            return;
-        }
-        synchronized (this) {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://" + this.host + "/" + this.db + "?autoReconnect=true&useSSL=false", this.username, this.password);
+        } finally {
+            dbHelper.disconnect();
         }
     }
 
-    @Override
-    public void onDisable() {
-        try {
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

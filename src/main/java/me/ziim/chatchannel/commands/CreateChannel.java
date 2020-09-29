@@ -1,5 +1,7 @@
 package me.ziim.chatchannel.commands;
 
+import me.ziim.chatchannel.util.DBHelper;
+import me.ziim.chatchannel.util.sqlUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -7,17 +9,14 @@ import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.util.StringUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static me.ziim.chatchannel.ChatChannel.getConnection;
-
 public class CreateChannel implements TabExecutor {
+    DBHelper dbHelper = new DBHelper();
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         System.out.println(Arrays.toString(args));
@@ -28,23 +27,8 @@ public class CreateChannel implements TabExecutor {
         String stringColor = args[1];
         ChatColor color = getColorFromText(stringColor);
         String title = String.join(" ", newArray);
-        Connection con = getConnection();
-        try {
-            String sql = "INSERT INTO channels(prefix, channel, color) values (?, ?, ?)";
-            PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, prefix);
-            pst.setString(2, title);
-            pst.setString(3, String.valueOf(color));
-            pst.executeUpdate();
-        } catch (SQLException e) {
-            if (e.getErrorCode() == 1062) {
-
-                player.sendMessage(ChatColor.RED + "ERROR: " + e.getMessage());
-            } else {
-                e.printStackTrace();
-            }
-        }
-
+        sqlUtil sqlHelper = new sqlUtil();
+        sqlHelper.createChannel(player, prefix, color, title);
         return true;
     }
 
