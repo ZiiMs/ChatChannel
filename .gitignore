@@ -10,3 +10,6 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 /dataSources/
 /.ideaDataSources/
+Chat Channel.iml
+Chat Channel.ipr
+Chat Channel.iws
