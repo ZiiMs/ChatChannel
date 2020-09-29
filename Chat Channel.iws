@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:GH" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="ChangeListManager">
@@ -26,8 +12,6 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/Channel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/util/ChannelHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat Channel.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/Chat Channel.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat Channel.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Chat Channel.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/ChatChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/ChatChannel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/CreateChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/CreateChannel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/JoinChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/JoinChannel.java" afterDir="false" />
@@ -72,24 +56,74 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Markdown" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,6 +186,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="164" key="#Plugins" timestamp="1601324392603">
@@ -166,10 +201,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="349" y="359" key="#SQL_Dialects/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601230733448" />
-    <state x="552" y="182" width="1110" height="693" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601313256334">
+    <state x="552" y="182" width="1110" height="693" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601401058748">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="182" width="1110" height="693" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601313256334" />
+    <state x="552" y="182" width="1110" height="693" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401058748" />
     <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1601328009739">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -178,26 +213,30 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601302259825" />
-    <state width="459" height="880" key="GridCell.Tab.0.bottom" timestamp="1601328197631">
+    <state width="488" height="426" key="GridCell.Tab.0.bottom" timestamp="1601401152453">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="459" height="880" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601328197631" />
-    <state width="459" height="880" key="GridCell.Tab.0.center" timestamp="1601328197631">
+    <state width="488" height="426" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401152453" />
+    <state width="488" height="426" key="GridCell.Tab.0.center" timestamp="1601401152453">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="459" height="880" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601328197631" />
-    <state width="459" height="880" key="GridCell.Tab.0.left" timestamp="1601328197631">
+    <state width="488" height="426" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401152453" />
+    <state width="488" height="426" key="GridCell.Tab.0.left" timestamp="1601401152453">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="459" height="880" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601328197631" />
-    <state width="459" height="880" key="GridCell.Tab.0.right" timestamp="1601328197631">
+    <state width="488" height="426" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401152453" />
+    <state width="488" height="426" key="GridCell.Tab.0.right" timestamp="1601401152453">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="459" height="880" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601328197631" />
+    <state width="488" height="426" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401152453" />
     <state width="196" height="539" key="HiddenNamespacesPopup" timestamp="1601142236313">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="196" height="539" key="HiddenNamespacesPopup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601142236313" />
+    <state x="440" y="98" key="SettingsEditor" timestamp="1601401121185">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="440" y="98" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401121185" />
     <state x="681" y="254" width="540" height="540" key="StructurePopup" timestamp="1601141917895">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -226,10 +265,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="237" key="run.anything.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601326909785" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1601324556756">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1601401068342">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601324556756" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401068342" />
     <state x="682" y="428" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1601324429654">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
