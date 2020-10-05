@@ -10,11 +10,17 @@
     - Color
 
 ## Tasks:
-- [x] ~Create command~
-    - [X] ~Channel creates and saves to database~
-- [X] ~Join channel command~
-    - [X] ~Adds the player to database, with channel name if channel exists~
-    - [X] ~Receives messages sent in channel~
+- [ ] Commands:
+    - [x] ~Create command~
+        - [X] ~Channel creates and saves to database~
+    - [X] ~Join channel command~
+        - [X] ~Adds the player to database, with channel name if channel exists~
+        - [X] ~Receives messages sent in channel~
+    - [X] ~List current channels~
+    - [X] ~Edit channel~
+        - [X] ~edit color, changes color of channel~
+        - [X] ~edit channel name, changes name of channel~
+        - [X] ~edit channel prefix, changes the symbol used to type in chat.~
 - [X] ~Auto join channel~
     - [X] ~On join, joins channel automatically~
 - [ ] Prepare for deploy
