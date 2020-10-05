@@ -31,7 +31,6 @@ public class Channel {
     }
 
     public boolean hasPlayer(Player player) {
-        this.players.add(player);
         System.out.println("Chan = " + prefix);
         System.out.println("players = " + players);
 

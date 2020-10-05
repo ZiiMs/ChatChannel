@@ -8,7 +8,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
-import org.bukkit.permissions.PermissionAttachmentInfo;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,7 +25,7 @@ public class JoinChannel implements TabExecutor {
         if (!sqlHelper.containsChannel(channel)) {
             player.sendMessage(ChatColor.RED + "ERROR: Channel not found");
         } else {
-            if (hasPerm(player, "cc." + channel)) {
+            if (player.hasPermission("cc." + channel)) {
                 if (sqlHelper.hasChannel(uuid, channel)) {
                     player.sendMessage("You are already in that channel");
                     return true;
@@ -46,18 +45,15 @@ public class JoinChannel implements TabExecutor {
                 ChannelHelper cHelper = ChatChannel.cHelper;
                 cHelper.addPlayer(player, cHelper.getChannelTitle(channel).prefix);
                 player.sendMessage(ChatColor.YELLOW + "Joining channel " + channel);
+            } else {
+                player.sendMessage(ChatColor.RED + "You don't have permission to join that channel.");
             }
         }
         return true;
     }
 
     public boolean hasPerm(Player player, String perm) {
-        for (PermissionAttachmentInfo perms : player.getEffectivePermissions()) {
-            if (perms.getPermission().equals(perm) || player.isOp()) {
-                return true;
-            }
-        }
-        return false;
+        return player.hasPermission(perm) || player.isOp();
     }
 
     @Override

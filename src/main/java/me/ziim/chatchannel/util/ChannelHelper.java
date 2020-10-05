@@ -82,15 +82,20 @@ public class ChannelHelper {
     }
 
     public void setPrefixByChannel(String Channel, String prefix) {
-        if (getChannelTitle(Channel) == null) return;
+        if (getChannelTitle(Channel.toLowerCase()) == null) return;
         System.out.println("setting prefix");
-        String oldPrefix = getChannelTitle(Channel).prefix;
-        getChannelTitle(Channel).prefix = prefix;
+        String oldPrefix = getChannelTitle(Channel.toLowerCase()).prefix;
+        getChannelTitle(Channel.toLowerCase()).prefix = prefix;
         channelMap.put(prefix, channelMap.remove(oldPrefix));
     }
 
+    public void removePlayer(Player player, String prefix) {
+        Channel chan = channelMap.get(prefix);
+        chan.players.removeIf(p -> p.equals(player));
+    }
+
     public Channel getChannelTitle(String name) {
-        return channelMap.values().stream().filter(channel -> channel.channel.equals(name)).findFirst().orElse(null);
+        return channelMap.values().stream().filter(channel -> channel.channel.toLowerCase().equals(name.toLowerCase())).findFirst().orElse(null);
     }
 
     public Set<Player> getRecipients(String prefix) {
