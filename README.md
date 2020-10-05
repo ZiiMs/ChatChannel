@@ -21,6 +21,7 @@
         - [X] ~edit color, changes color of channel~
         - [X] ~edit channel name, changes name of channel~
         - [X] ~edit channel prefix, changes the symbol used to type in chat.~
+    - [ ] Command to list channels available to join.
 - [X] ~Auto join channel~
     - [X] ~On join, joins channel automatically~
 - [ ] Prepare for deploy
