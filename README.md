@@ -12,11 +12,11 @@
 ## Tasks:
 - [x] ~Create command~
     - [X] ~Channel creates and saves to database~
-- [X] Join channel command
-    - [X] Adds the player to database, with channel name if channel exists
-    - [X] Receives messages sent in channel
-- [X] Auto join channel
-    - [X] On join, joins channel automatically
+- [X] ~Join channel command~
+    - [X] ~Adds the player to database, with channel name if channel exists~
+    - [X] ~Receives messages sent in channel~
+- [X] ~Auto join channel~
+    - [X] ~On join, joins channel automatically~
 - [ ] Prepare for deploy
     - [ ] Debug/Stress test
     - [ ] Polish/Finalize
