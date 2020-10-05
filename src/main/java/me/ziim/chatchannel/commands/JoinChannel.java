@@ -1,5 +1,7 @@
 package me.ziim.chatchannel.commands;
 
+import me.ziim.chatchannel.ChatChannel;
+import me.ziim.chatchannel.util.ChannelHelper;
 import me.ziim.chatchannel.util.sqlUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -41,6 +43,8 @@ public class JoinChannel implements TabExecutor {
                     return true;
                 }
                 sqlHelper.addChannel(uuid, channels);
+                ChannelHelper cHelper = ChatChannel.cHelper;
+                cHelper.addPlayer(player, cHelper.getChannelTitle(channel).prefix);
                 player.sendMessage(ChatColor.YELLOW + "Joining channel " + channel);
             }
         }

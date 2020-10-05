@@ -12,3 +12,21 @@ commands:
   join:
     description: Join a channel
     usage: §eUSAGE /join <channel title>
+    permission: cc.join
+  editprefix:
+    description: Edit prefix of a channel
+    usage: §eUSAGE /editprefix <channel name> <new prefix>
+    permission: cc.editprefix
+  editchannel:
+    description: Edit channel name
+    usage: §eUSAGE /editchannel <prefix> <new name>
+    permission: cc.editchannel
+  editcolor:
+    description: Edit color of a channel
+    usage: §eUSAGE /editcolor <prefix> <new color>
+    permission: cc.editcolor
+  channels:
+    description: Displays channels you are in.
+    usage: §eUSAGE /editcolor
+    permission: cc.channels
+

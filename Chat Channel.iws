@@ -9,14 +9,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ec75b44-0b9b-4a1f-bf21-9f2ca02eead4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/Channel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/util/ChannelHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/Channels.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/EditChannel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/EditColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/EditPrefix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat Channel.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/Chat Channel.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat Channel.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Chat Channel.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/Channel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/ChatChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/ChatChannel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/CreateChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/CreateChannel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/JoinChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/commands/JoinChannel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/events/ChatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/events/ChatListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/events/OnJoinEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/events/OnJoinEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/util/ChannelHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/util/ChannelHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/util/sqlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ziim/chatchannel/util/sqlUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +73,11 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="me.ziim.chatchannel.commands" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
@@ -170,6 +182,9 @@
       <workItem from="1601309699761" duration="2596000" />
       <workItem from="1601313352333" duration="1785000" />
       <workItem from="1601324331260" duration="3857000" />
+      <workItem from="1601401197764" duration="14000" />
+      <workItem from="1601857520136" duration="7255000" />
+      <workItem from="1601877286297" duration="2264000" />
     </task>
     <servers />
   </component>
@@ -205,42 +220,58 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="182" width="1110" height="693" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401058748" />
-    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1601328009739">
+    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1601877937383">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601328009739" />
+    <state x="765" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601877937383" />
     <state x="690" y="270" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1601302259825">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601302259825" />
-    <state width="488" height="426" key="GridCell.Tab.0.bottom" timestamp="1601401152453">
+    <state width="439" height="426" key="GridCell.Tab.0.bottom" timestamp="1601879809729">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="488" height="426" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401152453" />
-    <state width="488" height="426" key="GridCell.Tab.0.center" timestamp="1601401152453">
+    <state width="439" height="426" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601879809729" />
+    <state width="439" height="426" key="GridCell.Tab.0.center" timestamp="1601879809729">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="488" height="426" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401152453" />
-    <state width="488" height="426" key="GridCell.Tab.0.left" timestamp="1601401152453">
+    <state width="439" height="426" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601879809729" />
+    <state width="439" height="426" key="GridCell.Tab.0.left" timestamp="1601879809729">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="488" height="426" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401152453" />
-    <state width="488" height="426" key="GridCell.Tab.0.right" timestamp="1601401152453">
+    <state width="439" height="426" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601879809729" />
+    <state width="439" height="426" key="GridCell.Tab.0.right" timestamp="1601879809729">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="488" height="426" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401152453" />
-    <state width="196" height="539" key="HiddenNamespacesPopup" timestamp="1601142236313">
+    <state width="439" height="426" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601879809729" />
+    <state width="1876" height="335" key="GridCell.Tab.1.bottom" timestamp="1601864904029">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="196" height="539" key="HiddenNamespacesPopup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601142236313" />
+    <state width="1876" height="335" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601864904029" />
+    <state width="1876" height="335" key="GridCell.Tab.1.center" timestamp="1601864904029">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="335" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601864904029" />
+    <state width="1876" height="335" key="GridCell.Tab.1.left" timestamp="1601864904029">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="335" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601864904029" />
+    <state width="1876" height="335" key="GridCell.Tab.1.right" timestamp="1601864904029">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="335" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601864904029" />
+    <state width="196" height="539" key="HiddenNamespacesPopup" timestamp="1601857745772">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="196" height="539" key="HiddenNamespacesPopup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601857745772" />
     <state x="440" y="98" key="SettingsEditor" timestamp="1601401121185">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="440" y="98" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601401121185" />
-    <state x="681" y="254" width="540" height="540" key="StructurePopup" timestamp="1601141917895">
+    <state x="681" y="254" width="555" height="540" key="StructurePopup" timestamp="1601878771694">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="681" y="254" width="540" height="540" key="StructurePopup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601141917895" />
+    <state x="681" y="254" width="555" height="540" key="StructurePopup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601878771694" />
     <state x="861" y="411" width="311" height="266" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1601301772475">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -257,10 +288,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="219" key="extract.method.dialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601309907767" />
-    <state x="668" y="242" width="583" height="566" key="find.popup" timestamp="1601303649244">
+    <state x="668" y="242" width="642" height="566" key="find.popup" timestamp="1601878930218">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="668" y="242" width="583" height="566" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601303649244" />
+    <state x="668" y="242" width="642" height="566" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1601878930218" />
     <state x="616" y="237" key="run.anything.popup" timestamp="1601326909785">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -1,7 +1,9 @@
 package me.ziim.chatchannel.events;
 
 import me.ziim.chatchannel.Channel;
+import me.ziim.chatchannel.ChatChannel;
 import me.ziim.chatchannel.util.ChannelHelper;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,18 +16,19 @@ public class ChatListener implements Listener {
     public void onChatMessage(AsyncPlayerChatEvent e) {
         String baseMessage = e.getMessage();
         Player player = e.getPlayer();
-        ChannelHelper channels = new ChannelHelper();
+        ChannelHelper channels = ChatChannel.cHelper;
         String[] arr = baseMessage.split(" ", 2);
         if (arr.length <= 1) {
             return;
         }
         String first = arr[0];
         String message = arr[1];
-        System.out.println(channels.inChannel(player, first));
+
         if (channels.hasPrefix(first) && channels.inChannel(player, first)) {
             e.setCancelled(true);
             Channel chan = channels.getChannel(first);
-            e.setFormat("[" + chan.channel + "]" + chan.color + " <%1$s> %2$s");
+            System.out.println(chan.color);
+            e.setFormat(chan.color + "[" + chan.channel + "]" + ChatColor.WHITE + " <%1$s> %2$s");
             e.setMessage(message);
             Set<Player> recipients = chan.getRecipients();
             for (Player p : recipients) {

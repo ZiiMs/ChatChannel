@@ -13,26 +13,33 @@ public class Channel {
     public String channel;
     public ChatColor color;
     public int id;
-    public List<Player> players = new ArrayList<>();
+    public List<Player> players;
 
     public Channel(String prefix, String channel, ChatColor color, int id) {
+        System.out.println("New channel: " + channel);
         this.prefix = prefix;
         this.channel = channel;
         this.color = color;
         this.id = id;
+        this.players = new ArrayList<>();
     }
 
     public void addPlayers(Player player) {
-        players.add(player);
+        System.out.println("Chan = " + prefix);
+        this.players.add(player);
+        System.out.println("players = " + players);
     }
 
     public boolean hasPlayer(Player player) {
-        System.out.println("players.contains(player) = " + players.contains(player));
-        return players.contains(player);
+        this.players.add(player);
+        System.out.println("Chan = " + prefix);
+        System.out.println("players = " + players);
+
+        return this.players.contains(player);
     }
 
     public Set<Player> getRecipients() {
-        Set<Player> recipients = new HashSet<>(players);
+        Set<Player> recipients = new HashSet<>(this.players);
         return recipients;
     }
 }

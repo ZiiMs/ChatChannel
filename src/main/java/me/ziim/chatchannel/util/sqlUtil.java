@@ -27,9 +27,7 @@ public class sqlUtil {
             if (results.next()) {
                 String newResults = results.getString("channels").replace("[", "").replace("]", "");
                 newResults = newResults.trim();
-                System.out.println("newResults = " + newResults);
                 channels = newResults.split(", ");
-                System.out.println("channels = " + Arrays.toString(channels));
             }
         } catch (SQLException throwable) {
             throwable.printStackTrace();
@@ -88,7 +86,7 @@ public class sqlUtil {
             PreparedStatement pst = dbHelper.connect().prepareStatement(sql);
             pst.setString(1, prefix);
             pst.setString(2, title);
-            pst.setString(3, String.valueOf(color));
+            pst.setString(3, String.valueOf(color.getChar()));
             pst.executeUpdate();
             player.sendMessage(color + "You have create channel " + title + ". With prefix " + prefix);
         } catch (SQLException e) {
@@ -102,11 +100,86 @@ public class sqlUtil {
         }
     }
 
+    public boolean updatePrefix(String channel, String prefix, Player player) {
+        String updateSQL = "UPDATE channels SET prefix = ? WHERE channel = ?";
+        try {
+            PreparedStatement stmt = dbHelper.connect().prepareStatement(updateSQL);
+            stmt.setString(1, prefix);
+            stmt.setString(2, channel);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 1062) {
+                player.sendMessage(ChatColor.RED + "ERROR: " + e.getMessage());
+            } else {
+                e.printStackTrace();
+            }
+            return false;
+        } finally {
+            dbHelper.disconnect();
+        }
+        return true;
+    }
+
+    public boolean updateChannel(String prefix, String channel, Player player) {
+        String updateSQL = "UPDATE channels SET channel = ? WHERE prefix = ?";
+        try {
+            PreparedStatement stmt = dbHelper.connect().prepareStatement(updateSQL);
+            stmt.setString(1, channel);
+            stmt.setString(2, prefix);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 1062) {
+                player.sendMessage(ChatColor.RED + "ERROR: " + e.getMessage());
+            } else {
+                e.printStackTrace();
+            }
+            return false;
+        } finally {
+            dbHelper.disconnect();
+        }
+        return true;
+    }
+
+    public boolean updateColor(String prefix, ChatColor color, Player player) {
+        String updateSQL = "UPDATE channels SET color = ? WHERE prefix = ?";
+        try {
+            PreparedStatement stmt = dbHelper.connect().prepareStatement(updateSQL);
+            stmt.setString(1, String.valueOf(color.getChar()));
+            stmt.setString(2, prefix);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 1062) {
+                player.sendMessage(ChatColor.RED + "ERROR: " + e.getMessage());
+            } else {
+                e.printStackTrace();
+            }
+            return false;
+        } finally {
+            dbHelper.disconnect();
+        }
+        return true;
+    }
+
     public boolean containsChannel(String channel) {
         try {
             String getSql = "SELECT * FROM channels where channel=?";
             PreparedStatement statement = dbHelper.connect().prepareStatement(getSql);
             statement.setString(1, channel);
+            ResultSet results = statement.executeQuery();
+            return results.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbHelper.disconnect();
+        }
+        return false;
+    }
+
+    public boolean containsPrefix(String prefix) {
+        try {
+            String getSql = "SELECT * FROM channels where prefix=?";
+            PreparedStatement statement = dbHelper.connect().prepareStatement(getSql);
+            statement.setString(1, prefix);
             ResultSet results = statement.executeQuery();
             return results.next();
         } catch (SQLException e) {

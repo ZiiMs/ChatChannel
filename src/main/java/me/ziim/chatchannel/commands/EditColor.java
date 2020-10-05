@@ -2,7 +2,6 @@ package me.ziim.chatchannel.commands;
 
 import me.ziim.chatchannel.ChatChannel;
 import me.ziim.chatchannel.util.ChannelHelper;
-import me.ziim.chatchannel.util.DBHelper;
 import me.ziim.chatchannel.util.sqlUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -16,22 +15,24 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class CreateChannel implements TabExecutor {
-    DBHelper dbHelper = new DBHelper();
-
+public class EditColor implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        System.out.println(Arrays.toString(args));
-        if (args.length < 3) return false;
+        if (args.length < 2) return false;
         Player player = (Player) sender;
-        String[] newArray = Arrays.copyOfRange(args, 2, args.length);
+        String color = args[1];
         String prefix = args[0];
-        String stringColor = args[1];
-        ChatColor color = getColorFromText(stringColor);
-        String title = String.join(" ", newArray);
+
         sqlUtil sqlHelper = new sqlUtil();
-        sqlHelper.createChannel(player, prefix, color, title);
-        ChatChannel.cHelper.init();
+        if (!sqlHelper.containsPrefix(prefix)) {
+            player.sendMessage(ChatColor.RED + "ERROR: Channel not found.");
+        }
+        ChatColor chatColor = getColorFromText(color);
+        boolean succeed = sqlHelper.updateColor(prefix, chatColor, player);
+        if (!succeed) return true;
+        ChannelHelper cHelper = ChatChannel.cHelper;
+        cHelper.setColorByPrefix(prefix, chatColor);
+        player.sendMessage(ChatColor.GREEN + "You have set " + cHelper.getChannel(prefix).channel + " color to " + chatColor + chatColor.name());
         return true;
     }
 
@@ -104,5 +105,3 @@ public class CreateChannel implements TabExecutor {
         return results;
     }
 }
-
-
