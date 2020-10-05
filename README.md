@@ -17,7 +17,7 @@
         - [X] ~Adds the player to database, with channel name if channel exists~
         - [X] ~Receives messages sent in channel~
     - [X] ~List current channels~
-    - [X] ~Edit channel~
+    - [X] ~Edit channel:~
         - [X] ~edit color, changes color of channel~
         - [X] ~edit channel name, changes name of channel~
         - [X] ~edit channel prefix, changes the symbol used to type in chat.~
