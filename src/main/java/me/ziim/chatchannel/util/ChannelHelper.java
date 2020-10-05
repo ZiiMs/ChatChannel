@@ -98,6 +98,10 @@ public class ChannelHelper {
         return channelMap.values().stream().filter(channel -> channel.channel.toLowerCase().equals(name.toLowerCase())).findFirst().orElse(null);
     }
 
+    public Channel[] getChannels() {
+        return channelMap.values().toArray(new Channel[0]);
+    }
+
     public Set<Player> getRecipients(String prefix) {
         Channel chan = channelMap.get(prefix);
         Set<Player> recipients = new HashSet<>(chan.players);

@@ -27,6 +27,9 @@ commands:
     permission: cc.editcolor
   channels:
     description: Displays channels you are in.
-    usage: §eUSAGE /editcolor
+    usage: §eUSAGE /channels
     permission: cc.channels
-
+  listchannels:
+    description: Displays all channels.
+    usage: §eUSAGE /listchannels
+    permission: cc.listchannels

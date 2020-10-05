@@ -27,6 +27,7 @@ public final class ChatChannel extends JavaPlugin {
         this.getCommand("editcolor").setExecutor(new EditColor());
         this.getCommand("editcolor").setTabCompleter(new EditColor());
         this.getCommand("channels").setExecutor(new Channels());
+        this.getCommand("listchannels").setExecutor(new listChannels());
         
         this.getServer().getPluginManager().registerEvents(new ChatListener(), this);
         this.getServer().getPluginManager().registerEvents(new OnJoinEvent(), this);
