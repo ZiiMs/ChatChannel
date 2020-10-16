@@ -12,7 +12,6 @@ commands:
   join:
     description: Join a channel
     usage: §eUSAGE /join <channel title>
-    permission: cc.join
   editprefix:
     description: Edit prefix of a channel
     usage: §eUSAGE /editprefix <channel name> <new prefix>
@@ -33,3 +32,6 @@ commands:
     description: Displays all channels.
     usage: §eUSAGE /listchannels
     permission: cc.listchannels
+  leave:
+    description: Leaves a channel
+    usage: §eUSAGE /leave <channel title>

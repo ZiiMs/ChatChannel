@@ -16,7 +16,7 @@ public class listChannels implements CommandExecutor {
         if (channels.length == 0) {
             msg = new StringBuilder("No channels found.");
         } else {
-            msg = new StringBuilder("All channels:");
+            msg = new StringBuilder("All channels:\n");
             for (Channel chan : channels) {
                 String tempString = chan.color + chan.channel + ": " + chan.prefix + ", ";
                 msg.append(tempString);

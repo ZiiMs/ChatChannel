@@ -21,7 +21,6 @@ public class CreateChannel implements TabExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        System.out.println(Arrays.toString(args));
         if (args.length < 3) return false;
         Player player = (Player) sender;
         String[] newArray = Arrays.copyOfRange(args, 2, args.length);

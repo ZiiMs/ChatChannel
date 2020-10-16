@@ -12,11 +12,15 @@ import java.sql.Statement;
 
 public final class ChatChannel extends JavaPlugin {
 
-    public static ChannelHelper cHelper = new ChannelHelper();
+    public static ChannelHelper cHelper;
 
     @Override
     public void onEnable() {
         getLogger().info("ChatChannel started");
+
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+        cHelper = new ChannelHelper();
 
         this.getCommand("createchannel").setExecutor(new CreateChannel());
         this.getCommand("createchannel").setTabCompleter(new CreateChannel());
@@ -28,7 +32,9 @@ public final class ChatChannel extends JavaPlugin {
         this.getCommand("editcolor").setTabCompleter(new EditColor());
         this.getCommand("channels").setExecutor(new Channels());
         this.getCommand("listchannels").setExecutor(new listChannels());
-        
+        this.getCommand("leave").setExecutor(new LeaveChannel());
+        this.getCommand("leave").setTabCompleter(new LeaveChannel());
+
         this.getServer().getPluginManager().registerEvents(new ChatListener(), this);
         this.getServer().getPluginManager().registerEvents(new OnJoinEvent(), this);
 

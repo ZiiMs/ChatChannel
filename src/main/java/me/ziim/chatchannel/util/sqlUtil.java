@@ -1,6 +1,7 @@
 package me.ziim.chatchannel.util;
 
 import me.ziim.chatchannel.ChatChannel;
+import org.apache.commons.lang.ArrayUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -25,9 +26,12 @@ public class sqlUtil {
             stmt.setString(1, uuid);
             ResultSet results = stmt.executeQuery();
             if (results.next()) {
-                String newResults = results.getString("channels").replace("[", "").replace("]", "");
-                newResults = newResults.trim();
-                channels = newResults.split(", ");
+                String result = results.getString("channels");
+                if (result.length() > 2) {
+                    String newResults = result.replace("[", "").replace("]", "");
+                    newResults = newResults.trim();
+                    channels = newResults.split(", ");
+                }
             }
         } catch (SQLException throwable) {
             throwable.printStackTrace();
@@ -35,23 +39,6 @@ public class sqlUtil {
             dbHelper.disconnect();
         }
         return channels;
-    }
-
-    public boolean hasChannel(String uuid, String channel) {
-        try {
-            PreparedStatement stmt = dbHelper.connect().prepareStatement(getSql);
-            stmt.setString(1, uuid);
-            ResultSet results = stmt.executeQuery();
-            if (results.next()) {
-                String newResults = results.getString("channels").replace("[", "").replace("]", "").replace(",", "");
-                return newResults.contains(channel + " ");
-            }
-        } catch (SQLException throwable) {
-            throwable.printStackTrace();
-        } finally {
-            dbHelper.disconnect();
-        }
-        return false;
     }
 
     public void addChannel(String uuid, String[] channels) {
@@ -63,13 +50,44 @@ public class sqlUtil {
                     if (!ifExists(uuid)) {
                         sql = "INSERT INTO players(channels, UUID) values (?, ?)";
                     }
-                    System.out.println(Arrays.toString(channels));
                     PreparedStatement statement = dbHelper.connect().prepareStatement(sql);
                     statement.setString(1, Arrays.toString(channels));
                     statement.setString(2, uuid);
                     statement.executeUpdate();
-                    System.out.println("statement: " + statement.toString());
 
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } finally {
+                    dbHelper.disconnect();
+                }
+            }
+        };
+        r.runTaskAsynchronously(plugin);
+    }
+
+    public void removeChannel(String uuid, String channel) {
+        BukkitRunnable r = new BukkitRunnable() {
+            @Override
+            public void run() {
+                try {
+                    String sql = "UPDATE players set channels = ? where UUID = ?";
+                    String[] channels = getChannels(uuid);
+//                    String foundChan = Arrays.stream(channels).filter(s -> s.equals(channel)).findFirst().orElse(null);
+//                    if (foundChan != null) {
+//                        ArrayUtils.removeElement(channels, channel);
+//                    }
+                    int i = 0;
+                    for (String chan : channels) {
+                        if (chan.toLowerCase().equals(channel.toLowerCase())) {
+                            channels = (String[]) ArrayUtils.remove(channels, i);
+                            break;
+                        }
+                        i++;
+                    }
+                    PreparedStatement statement = dbHelper.connect().prepareStatement(sql);
+                    statement.setString(1, Arrays.toString(channels));
+                    statement.setString(2, uuid);
+                    statement.executeUpdate();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 } finally {
@@ -89,6 +107,7 @@ public class sqlUtil {
             pst.setString(3, String.valueOf(color.getChar()));
             pst.executeUpdate();
             player.sendMessage(color + "You have create channel " + title + ". With prefix " + prefix);
+            System.out.println(player.getName() + " has created channel: " + title + " with prefix:" + prefix + " and color: " + color.name());
         } catch (SQLException e) {
             if (e.getErrorCode() == 1062) {
                 player.sendMessage(ChatColor.RED + "ERROR: " + e.getMessage());

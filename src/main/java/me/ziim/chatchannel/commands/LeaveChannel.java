@@ -1,6 +1,5 @@
 package me.ziim.chatchannel.commands;
 
-import me.ziim.chatchannel.Channel;
 import me.ziim.chatchannel.ChatChannel;
 import me.ziim.chatchannel.util.ChannelHelper;
 import me.ziim.chatchannel.util.sqlUtil;
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class JoinChannel implements TabExecutor {
+public class LeaveChannel implements TabExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -28,27 +27,12 @@ public class JoinChannel implements TabExecutor {
         if (!sqlHelper.containsChannel(channel)) {
             player.sendMessage(ChatColor.RED + "ERROR: Channel not found");
         } else {
-            if (player.hasPermission("cc." + channel)) {
-                if (cHelper.inChannel(player, cHelper.getChannelTitle(channel).prefix)) {
-                    player.sendMessage("You are already in that channel");
-                    return true;
-                }
-                String[] channels = new String[]{};
-                if (sqlHelper.ifExists(uuid)) {
-                    List<String> channelList = new ArrayList<>();
-                    Collections.addAll(channelList, sqlHelper.getChannels(uuid));
-                    channelList.add(channel);
-                    channels = channelList.toArray(new String[0]);
-                }
-                if (channels.length >= 10) {
-                    player.sendMessage("You are in the maximum number of channels already");
-                    return true;
-                }
-                sqlHelper.addChannel(uuid, channels);
-                cHelper.addPlayer(player, cHelper.getChannelTitle(channel).prefix);
-                player.sendMessage(ChatColor.YELLOW + "Joining channel " + channel);
+            if (cHelper.inChannel(player, cHelper.getChannelTitle(channel).prefix)) {
+                sqlHelper.removeChannel(uuid, channel);
+                cHelper.removePlayer(player, cHelper.getChannelTitle(channel).prefix);
+                player.sendMessage(ChatColor.YELLOW + "Leaving channel " + channel);
             } else {
-                player.sendMessage(ChatColor.RED + "You don't have permission to join that channel.");
+                player.sendMessage("You are not in that channel");
             }
         }
         return true;
@@ -58,14 +42,9 @@ public class JoinChannel implements TabExecutor {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         Player player = (Player) sender;
         sqlUtil sqlHelper = new sqlUtil();
-        ChannelHelper cHelper = ChatChannel.cHelper;
         List<String> channels = new ArrayList<>();
         List<String> tabChannels = new ArrayList<>();
-        for (Channel channel : cHelper.getChannels()) {
-            if (player.hasPermission("cc." + channel.channel) && !cHelper.inChannel(player, channel.prefix)) {
-                channels.add(channel.channel);
-            }
-        }
+        Collections.addAll(channels, sqlHelper.getChannels(player.getUniqueId().toString()));
         if (args.length == 1) {
             StringUtil.copyPartialMatches(args[0], channels, tabChannels);
         }

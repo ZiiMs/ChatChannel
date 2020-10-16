@@ -27,7 +27,6 @@ public class ChatListener implements Listener {
         if (channels.hasPrefix(first) && channels.inChannel(player, first)) {
             e.setCancelled(true);
             Channel chan = channels.getChannel(first);
-            System.out.println(chan.color);
             e.setFormat(chan.color + "[" + chan.channel + "]" + ChatColor.WHITE + " <%1$s> %2$s");
             e.setMessage(message);
             Set<Player> recipients = chan.getRecipients();

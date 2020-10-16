@@ -21,11 +21,9 @@ public class OnJoinEvent implements Listener {
         sqlUtil sqlHelper = new sqlUtil();
         String[] chans = sqlHelper.getChannels(uuid.toString());
         ChannelHelper channelHelper = ChatChannel.cHelper;
-        System.out.println(chans.length);
         if (chans.length == 0) return;
         for (String chanName : chans) {
             if (channelHelper.getChannelTitle(chanName) != null) {
-                System.out.println(channelHelper.getChannelTitle(chanName).channel);
                 channelHelper.addPlayer(player, channelHelper.getChannelTitle(chanName).prefix);
             }
         }

@@ -16,7 +16,6 @@ public class Channel {
     public List<Player> players;
 
     public Channel(String prefix, String channel, ChatColor color, int id) {
-        System.out.println("New channel: " + channel);
         this.prefix = prefix;
         this.channel = channel;
         this.color = color;
@@ -25,14 +24,14 @@ public class Channel {
     }
 
     public void addPlayers(Player player) {
-        System.out.println("Chan = " + prefix);
         this.players.add(player);
-        System.out.println("players = " + players);
+    }
+
+    public void removePlayers(Player player) {
+        this.players.remove(player);
     }
 
     public boolean hasPlayer(Player player) {
-        System.out.println("Chan = " + prefix);
-        System.out.println("players = " + players);
 
         return this.players.contains(player);
     }
